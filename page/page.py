@@ -1,7 +1,21 @@
 import streamlit as st
 
-fname = st.text_input("이름을 입력하세요!")
+
+
+st.title("통합과학교재연구및 지도 수업시연 평가지")
+
+# 6. 날짜 입력
+my_date = st.date_input('발표일시') # 디폴트 오늘
+st.write(my_date)
+
+fname = st.text_input("발표자: ")
 st.title(fname)
+
+fname1 = st.text_input("참관자: ")
+st.title(fname1)
+
+st.write('채점은 색이 표시된 부분에 1(저) ~ 5(고)점까지 표시하면 됩니다.')
+
 
 message = st.text_area("메시지를 입력하세요")
 st.write(message)
