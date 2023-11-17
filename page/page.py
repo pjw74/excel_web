@@ -29,8 +29,16 @@ with col1:
 
     st.write('채점항목')
     st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
 
-    st.write('학습 내용의 적합성')
+st.write('학습 내용의 적합성')
 
 with col2:
     # column 2 에 담을 내용
@@ -48,6 +56,9 @@ with col2:
 with col3:
     # column 3 에 담을 내용
     st.write("점수")
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
     st.write('\n')
     st.write('\n')
     st.write('\n')
