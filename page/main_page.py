@@ -50,6 +50,7 @@ with col7:
     st.number_input('1', 1, 5,label_visibility="collapsed")
     st.number_input('2', 1, 5,label_visibility="collapsed")
     st.write('\n')
+    st.write('\n')
     st.number_input('3', 1, 5,label_visibility="collapsed")
     st.number_input('4', 1, 5,label_visibility="collapsed")
 
@@ -130,6 +131,8 @@ with col13:
     st.number_input('10', 1, 5,label_visibility="collapsed")
     st.write('\n')
     st.write('\n')
+    st.write('\n')
+
     st.number_input('11', 1, 5,label_visibility="collapsed")
     st.number_input('12', 1, 5,label_visibility="collapsed")
 
@@ -152,6 +155,8 @@ with col15:
     test2 = st.write('◆ 수업에 대한 열의가 있고, 학생을 존중하는 태도가 드러나는가?')
     test3 = st.write(' - 열의를 가지고 적극적으로 수업을 진행하는가?')
     test4 = st.write(' - 자신 있게 수업을 진행하는가?')
+    st.write('\n')
+
     test7 = st.write(' - 가르치는 태도와 언행등이 학생들 존중하는 모습인가?')
 
 with col16:
