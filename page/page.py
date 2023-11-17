@@ -43,12 +43,12 @@ with col2:
 with col3:
     # column 3 에 담을 내용
     st.write("점수")
-    st.number_input('1', 1, 5,"hidden")
-    st.number_input('2', 1, 5,"hidden")
-    st.number_input('3', 1, 5,"hidden")
-    st.number_input('4', 1, 5,"hidden")
-    st.number_input('5', 1, 5,"hidden")
-    st.number_input('6', 1, 5,"hidden")
+    st.number_input('1', 1, 5,label_visibility="hidden")
+    st.number_input('2', 1, 5,label_visibility="hidden")
+    st.number_input('3', 1, 5,label_visibility="hidden")
+    st.number_input('4', 1, 5,label_visibility="hidden")
+    st.number_input('5', 1, 5,label_visibility="hidden")
+    st.number_input('6', 1, 5,label_visibility="hidden")
 
     #st.title(fname1)
 
