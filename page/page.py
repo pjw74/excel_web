@@ -20,12 +20,15 @@ with col3:
     #st.title(fname1)
 
 
+st.write('\n')
 st.write('채점은 색이 표시된 부분에 1(저) ~ 5(고)점까지 표시하면 됩니다.')
 
-col5, col6, col7 = st.columns([1,5,1])
+col5, col6, col7 = st.columns([1,4,1])
 
 with col5:
     st.write('채점항목')
+    st.write('\n')
+    st.write('\n')
     st.write('\n')
     st.write('\n')
     st.write('\n')
