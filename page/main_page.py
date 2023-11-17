@@ -93,7 +93,6 @@ with col10:
     st.write('\n')
     st.write('\n')
     st.write('\n')
-    st.write('\n')
 
     st.number_input('7', 1, 5,label_visibility="collapsed")
     st.number_input('8', 1, 5,label_visibility="collapsed")
@@ -165,6 +164,7 @@ with col15:
     test7 = st.write(' - 가르치는 태도와 언행등이 학생들 존중하는 모습인가?')
 
 with col16:
+    st.write('\n')
     st.write('\n')
     st.write('\n')
     st.write('\n')
