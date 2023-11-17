@@ -26,13 +26,12 @@ col4, col5, col6 = st.columns([1,5,1])
 
 with col1:
     # column 1 에 담을 내용
-    score = st.text_input('채점항목')
-    test1 = st.text_input('학습 내용의 적합성')
+    st.write('채점항목')
+    st.write('학습 내용의 적합성')
 
-    #st.write(my_date)
 with col2:
     # column 2 에 담을 내용
-    fname = st.text_input("상세 채점 기준")
+    st.write("상세 채점 기준")
     test2 = st.text_input('◆ 학습목표 설정 및 수업 실연에서 일치여부')
     test3 = st.text_input(' - 학습목표의 설정은 적합한가?')
     test4 = st.text_input(' - 학습목표의 의미를 적절한 방법으로 전달하였는가?')
@@ -43,7 +42,7 @@ with col2:
 #st.title(fname)
 with col3:
     # column 3 에 담을 내용
-    fname1 = st.text_input("점수")
+    st.write("점수")
     st.number_input('숫자 입력', 1, 5)
     st.number_input('숫자 입력', 1, 5)
     st.number_input('숫자 입력', 1, 5)
