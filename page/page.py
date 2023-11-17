@@ -19,8 +19,9 @@ with col3:
     fname1 = st.text_input("참관자")
     #st.title(fname1)
 
+st.write('\n')
 st.write('채점은 색이 표시된 부분에 1(저) ~ 5(고)점까지 표시하면 됩니다.')
-
+st.write('\n')
 
 col4, col5, col6 = st.columns([1,5,1])
 
@@ -41,7 +42,7 @@ with col2:
     st.write("상세 채점 기준")
     st.write('\n')
 
-    test2 = st.write('◆ 학습목표 설정 및 수업 실연에서 일치여부')
+    test2 = st.write('◆ 학습목표 설정 및 수업 실연에서 일치 여부')
     test3 = st.write(' - 학습목표의 설정은 적합한가?')
     test4 = st.write(' - 학습목표의 의미를 적절한 방법으로 전달하였는가?')
     test5 = st.write('◆ 학습자의 수준을 고려한 수업 ')
@@ -65,8 +66,7 @@ with col3:
     st.write('\n')
     st.write('\n')
     st.write('\n')
-    st.write('\n')
-    st.write('\n')
+
     st.number_input('5', 1, 5,label_visibility="collapsed")
     st.write('\n')
     st.number_input('6', 1, 5,label_visibility="collapsed")
