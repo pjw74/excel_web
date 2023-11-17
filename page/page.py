@@ -32,11 +32,7 @@ with col1:
     st.write('\n')
     st.write('\n')
     st.write('\n')
-    st.write('\n')
-    st.write('\n')
-    st.write('\n')
-    st.write('\n')
-    st.write('\n')
+
 
 st.write('학습 내용의 적합성')
 
@@ -56,7 +52,6 @@ with col2:
 with col3:
     # column 3 에 담을 내용
     st.write("점수")
-    st.write('\n')
     st.write('\n')
     st.write('\n')
     st.write('\n')
