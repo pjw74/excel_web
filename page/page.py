@@ -21,6 +21,8 @@ col5, col6, col7 = st.columns([1,3,1])
 
 with col5:
     st.write('채점항목')
+    st.write('---')
+
     st.write('\n')
     st.write('\n')
     st.write('\n')
@@ -34,6 +36,8 @@ with col5:
 
 with col6:
     st.write("상세 채점 기준")
+    st.write('---')
+
     st.write('\n')
     test2 = st.write('◆ 학습목표 설정 및 수업 실연에서 일치 여부')
     test3 = st.write(' - 학습목표의 설정은 적합한가?')
