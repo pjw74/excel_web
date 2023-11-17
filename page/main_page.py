@@ -127,10 +127,7 @@ with col13:
     st.write('\n')
     st.write('\n')
     st.number_input('9', 1, 5,label_visibility="collapsed")
-    st.write('\n')
-
     st.number_input('10', 1, 5,label_visibility="collapsed")
-    st.write('\n')
     st.write('\n')
     st.write('\n')
     st.number_input('11', 1, 5,label_visibility="collapsed")
@@ -147,11 +144,7 @@ with col14:
     st.write('\n')
     st.write('\n')
     st.write('\n')
-    st.write('\n')
-    st.write('\n')
-    st.write('\n')
-    st.write('\n')
-    st.write('\n')
+
     st.write('학생 존중의 태도')
 
 with col15:
@@ -162,7 +155,6 @@ with col15:
     test7 = st.write(' - 가르치는 태도와 언행등이 학생들 존중하는 모습인가?')
 
 with col16:
-    st.write('\n')
     st.write('\n')
     st.write('\n')
     st.write('\n')
