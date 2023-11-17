@@ -1,6 +1,6 @@
 import streamlit as st
 
-
+num1, num2, num3, num4 = 0,0,0,0
 st.title("통합과학 교재연구 및 지도 수업시연 평가지")
 
 col1, col2, col3 = st.columns([1,1,1])
@@ -47,12 +47,12 @@ with col7:
     st.write('\n')
     st.write('\n')
     st.write('\n')
-    st.number_input('1', 1, 5,label_visibility="collapsed")
-    st.number_input('2', 1, 5,label_visibility="collapsed")
+    num1 += st.number_input('1', 1, 5,label_visibility="collapsed")
+    num1 += st.number_input('2', 1, 5,label_visibility="collapsed")
     st.write('\n')
     st.write('\n')
-    st.number_input('3', 1, 5,label_visibility="collapsed")
-    st.number_input('4', 1, 5,label_visibility="collapsed")
+    num1 += st.number_input('3', 1, 5,label_visibility="collapsed")
+    num1 += st.number_input('4', 1, 5,label_visibility="collapsed")
 
 st.write('---')
 
@@ -85,17 +85,17 @@ with col10:
     st.write('\n')
     st.write('\n')
     st.write('\n')
-    st.number_input('5', 1, 5,label_visibility="collapsed")
+    num2 += st.number_input('5', 1, 5,label_visibility="collapsed")
     st.write('\n')
     st.write('\n')
 
-    st.number_input('6', 1, 5,label_visibility="collapsed")
+    num2 += st.number_input('6', 1, 5,label_visibility="collapsed")
     st.write('\n')
     st.write('\n')
     st.write('\n')
 
-    st.number_input('7', 1, 5,label_visibility="collapsed")
-    st.number_input('8', 1, 5,label_visibility="collapsed")
+    num2 += st.number_input('7', 1, 5,label_visibility="collapsed")
+    num2 += st.number_input('8', 1, 5,label_visibility="collapsed")
 
 st.write('---')
 
@@ -129,14 +129,14 @@ with col13:
     st.write('\n')
     st.write('\n')
     st.write('\n')
-    st.number_input('9', 1, 5,label_visibility="collapsed")
-    st.number_input('10', 1, 5,label_visibility="collapsed")
+    num3 += st.number_input('9', 1, 5,label_visibility="collapsed")
+    num3 += st.number_input('10', 1, 5,label_visibility="collapsed")
     st.write('\n')
     st.write('\n')
     st.write('\n')
 
-    st.number_input('11', 1, 5,label_visibility="collapsed")
-    st.number_input('12', 1, 5,label_visibility="collapsed")
+    num3 += st.number_input('11', 1, 5,label_visibility="collapsed")
+    num3 += st.number_input('12', 1, 5,label_visibility="collapsed")
 
 st.write('---')
 
@@ -168,27 +168,17 @@ with col16:
     st.write('\n')
     st.write('\n')
     st.write('\n')
-    st.number_input('13', 1, 5,label_visibility="collapsed")
-    st.number_input('14', 1, 5,label_visibility="collapsed")
-    st.number_input('15', 1, 5,label_visibility="collapsed")
+    num4 += st.number_input('13', 1, 5,label_visibility="collapsed")
+    num4 += st.number_input('14', 1, 5,label_visibility="collapsed")
+    num4 += st.number_input('15', 1, 5,label_visibility="collapsed")
 
 st.write('---')
 
-
-
-
-
-
-
-
-st.write('\n')
-st.write('\n')
-st.write('\n')
-st.write('\n')
 st.write('\n')
 st.write('\n')
 
 summary = st.text_area("총평")
 st.write(summary)
 
-all_score = st.write('합계')
+nun_sum = num1+num2+num3+num4
+st.write(nun_sum)
