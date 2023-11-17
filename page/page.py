@@ -50,11 +50,12 @@ with col3:
     st.write("점수")
     st.write('\n')
 
-    st.number_input('1', 1, 5,label_visibility="collapsed")
+    # st.number_input('1', 1, 5,label_visibility="collapsed")
     st.number_input('2', 1, 5,label_visibility="collapsed")
     st.number_input('3', 1, 5,label_visibility="collapsed")
-    st.number_input('4', 1, 5,label_visibility="collapsed")
+    # st.number_input('4', 1, 5,label_visibility="collapsed")
     st.number_input('5', 1, 5,label_visibility="collapsed")
+    st.write('\n')
     st.number_input('6', 1, 5,label_visibility="collapsed")
 
     #st.title(fname1)
