@@ -32,23 +32,23 @@ with col1:
 with col2:
     # column 2 에 담을 내용
     st.write("상세 채점 기준")
-    test2 = st.text_input('◆ 학습목표 설정 및 수업 실연에서 일치여부')
-    test3 = st.text_input(' - 학습목표의 설정은 적합한가?')
-    test4 = st.text_input(' - 학습목표의 의미를 적절한 방법으로 전달하였는가?')
-    test5 = st.text_input('◆ 학습자의 수준을 고려한 수업 ')
-    test6 = st.text_input(' - 학습동기 유발이 제대로 이루어졌는가?')
-    test7 = st.text_input(' - 학습자의 수준에 맞는 과학적 용어나 예시 등을 적절하게 사용하였는가?')
+    test2 = st.write('◆ 학습목표 설정 및 수업 실연에서 일치여부')
+    test3 = st.write(' - 학습목표의 설정은 적합한가?')
+    test4 = st.write(' - 학습목표의 의미를 적절한 방법으로 전달하였는가?')
+    test5 = st.write('◆ 학습자의 수준을 고려한 수업 ')
+    test6 = st.write(' - 학습동기 유발이 제대로 이루어졌는가?')
+    test7 = st.write(' - 학습자의 수준에 맞는 과학적 용어나 예시 등을 적절하게 사용하였는가?')
 
 #st.title(fname)
 with col3:
     # column 3 에 담을 내용
     st.write("점수")
-    st.number_input('숫자 입력', 1, 5)
-    st.number_input('숫자 입력', 1, 5)
-    st.number_input('숫자 입력', 1, 5)
-    st.number_input('숫자 입력', 1, 5)
-    st.number_input('숫자 입력', 1, 5)
-    st.number_input('숫자 입력', 1, 5)
+    st.number_input('1', 1, 5,"hidden")
+    st.number_input('2', 1, 5,"hidden")
+    st.number_input('3', 1, 5,"hidden")
+    st.number_input('4', 1, 5,"hidden")
+    st.number_input('5', 1, 5,"hidden")
+    st.number_input('6', 1, 5,"hidden")
 
     #st.title(fname1)
 
