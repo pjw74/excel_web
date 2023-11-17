@@ -34,7 +34,7 @@ with col1:
     st.write('\n')
 
 
-st.write('학습 내용의 적합성')
+    st.write('학습 내용의 적합성')
 
 with col2:
     # column 2 에 담을 내용
@@ -62,6 +62,11 @@ with col3:
     st.number_input('2', 1, 5,label_visibility="collapsed")
     st.number_input('3', 1, 5,label_visibility="collapsed")
     # st.number_input('4', 1, 5,label_visibility="collapsed")
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
     st.number_input('5', 1, 5,label_visibility="collapsed")
     st.write('\n')
     st.number_input('6', 1, 5,label_visibility="collapsed")
