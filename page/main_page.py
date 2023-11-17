@@ -165,15 +165,10 @@ with col16:
     st.write('\n')
     st.write('\n')
     st.write('\n')
+    st.write('\n')
     st.number_input('13', 1, 5,label_visibility="collapsed")
-    st.write('\n')
-
     st.number_input('14', 1, 5,label_visibility="collapsed")
-    st.write('\n')
-    st.write('\n')
-    st.write('\n')
     st.number_input('15', 1, 5,label_visibility="collapsed")
-    st.number_input('16', 1, 5,label_visibility="collapsed")
 
 st.write('---')
 
