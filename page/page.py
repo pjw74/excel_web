@@ -61,6 +61,9 @@ with col8:
     st.write('\n')
     st.write('\n')
     st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
     st.write('의사소통 능력')
 
 with col9:
@@ -77,7 +80,11 @@ with col10:
     st.write('\n')
     st.write('\n')
     st.number_input('5', 1, 5,label_visibility="collapsed")
+    st.write('\n')
+
     st.number_input('6', 1, 5,label_visibility="collapsed")
+    st.write('\n')
+    st.write('\n')
     st.write('\n')
     st.number_input('7', 1, 5,label_visibility="collapsed")
     st.number_input('8', 1, 5,label_visibility="collapsed")
