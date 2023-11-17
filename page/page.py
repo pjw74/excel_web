@@ -76,11 +76,11 @@ with col10:
     st.write('\n')
     st.write('\n')
     st.write('\n')
-    st.number_input('2', 1, 5,label_visibility="collapsed")
-    st.number_input('3', 1, 5,label_visibility="collapsed")
+    st.number_input(1, 5,label_visibility="collapsed")
+    st.number_input(1, 5,label_visibility="collapsed")
     st.write('\n')
-    st.number_input('5', 1, 5,label_visibility="collapsed")
-    st.number_input('6', 1, 5,label_visibility="collapsed")
+    st.number_input(1, 5,label_visibility="collapsed")
+    st.number_input(1, 5,label_visibility="collapsed")
 
 
 
