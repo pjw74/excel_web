@@ -94,13 +94,88 @@ with col10:
     st.number_input('7', 1, 5,label_visibility="collapsed")
     st.number_input('8', 1, 5,label_visibility="collapsed")
 
+st.write('---')
 
 
 
+col11, col12, col13 = st.columns([1,3,1])
+
+with col11:
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('수업 운영 기술')
+
+with col12:
+    st.write('\n')
+    test2 = st.write('◆ 수업 진행 속도')
+    test3 = st.write(' - 학생들의 수업을 이해하기 어려울 정도로 너무 빠르지 않는가?')
+    test4 = st.write(' - 학생들의 수업에 대한 집중도를 약화시킬 정도로 너무 느리지 않은가?')
+    test5 = st.write('◆ 판서의 적절성')
+    test6 = st.write(' - 판서 글씨가 가독성이 좋은가?')
+    test7 = st.write(' - 판서 내용이 학습 목표를 원활하게 달성할 수 있을 정도로 조직적인가?')
+
+with col13:
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.number_input('5', 1, 5,label_visibility="collapsed")
+    st.write('\n')
+
+    st.number_input('6', 1, 5,label_visibility="collapsed")
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.number_input('7', 1, 5,label_visibility="collapsed")
+    st.number_input('8', 1, 5,label_visibility="collapsed")
+
+st.write('---')
 
 
+col14, col15, col16 = st.columns([1,3,1])
 
+with col14:
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('학생 존중의 태도')
 
+with col15:
+    st.write('\n')
+    test2 = st.write('◆ 수업에 대한 열의가 있고, 학생을 존중하는 태도가 드러나는가?')
+    test3 = st.write(' - 열의를 가지고 적극적으로 수업을 진행하는가?')
+    test4 = st.write(' - 자신 있게 수업을 진행하는가?')
+    test7 = st.write(' - 가르치는 태도와 언행등이 학생들 존중하는 모습인가?')
+
+with col16:
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.number_input('5', 1, 5,label_visibility="collapsed")
+    st.write('\n')
+
+    st.number_input('6', 1, 5,label_visibility="collapsed")
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.number_input('7', 1, 5,label_visibility="collapsed")
+    st.number_input('8', 1, 5,label_visibility="collapsed")
+
+st.write('---')
 
 
 
