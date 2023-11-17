@@ -38,21 +38,18 @@ with col2:
     st.write('\n')
 
     test2 = st.write('◆ 학습목표 설정 및 수업 실연에서 일치여부')
-    st.write('\n')
     test3 = st.write(' - 학습목표의 설정은 적합한가?')
-    st.write('\n')
     test4 = st.write(' - 학습목표의 의미를 적절한 방법으로 전달하였는가?')
-    st.write('\n')
     test5 = st.write('◆ 학습자의 수준을 고려한 수업 ')
-    st.write('\n')
     test6 = st.write(' - 학습동기 유발이 제대로 이루어졌는가?')
-    st.write('\n')
     test7 = st.write(' - 학습자의 수준에 맞는 과학적 용어나 예시 등을 적절하게 사용하였는가?')
 
 #st.title(fname)
 with col3:
     # column 3 에 담을 내용
     st.write("점수")
+    st.write('\n')
+
     st.number_input('1', 1, 5,label_visibility="collapsed")
     st.number_input('2', 1, 5,label_visibility="collapsed")
     st.number_input('3', 1, 5,label_visibility="collapsed")
