@@ -15,10 +15,14 @@ with col3:
 st.write('\n')
 st.write('채점은 1(저) ~ 5(고)점까지 표시하면 됩니다.')
 
+st.write('---')
+
 col5, col6, col7 = st.columns([1,3,1])
 
 with col5:
     st.write('채점항목')
+    st.write('\n')
+    st.write('\n')
     st.write('\n')
     st.write('\n')
     st.write('\n')
