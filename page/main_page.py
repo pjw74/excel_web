@@ -3,25 +3,8 @@ import streamlit as st
 from functools import partial
 import pandas as pd
 import json
-import streamlit_authenticator as stauth
-
-import yaml
-from yaml.loader import SafeLoader
-with open('../config.yaml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
-
-authenticator = Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days'],
-    config['preauthorized']
-)
 
 def main_page():
-
-    #st.markdown("# Main page 🎈")
-    #st.sidebar.markdown("# Main page 🎈")
 
     num1, num2, num3, num4 = 0,0,0,0
     st.title("통합과학 교재연구 및 지도 수업시연 평가지")

@@ -310,3 +310,11 @@ test-files/*
 *venv/*
 .idea/
 db/*
+
+
+excel_web/db
+
+
+
+
+
