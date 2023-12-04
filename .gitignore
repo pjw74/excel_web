@@ -309,3 +309,4 @@ cli/.streamlit/secrets.toml
 test-files/*
 *venv/*
 .idea/
+db
