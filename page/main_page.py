@@ -194,9 +194,9 @@ def main_page():
                 st.write("총점: ", score_sum)
 
                 # Save data to a JSON file
-                data = {"summary": summary, "score_sum": score_sum}
-                with open('data.json', 'w') as f:
-                    json.dump(data, f)
+                #data = {"summary": summary, "score_sum": score_sum}
+                #with open('data.json', 'w') as f:
+                #    json.dump(data, f)
         else:
             st.warning('총평을 입력해주세요!', icon="⚠️")
 
