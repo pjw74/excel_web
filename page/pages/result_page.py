@@ -36,6 +36,7 @@ if st.button("sheet 초기화"):
 if st.button("sheet 확인"):
     conn = st.connection("gsheets", type=GSheetsConnection)
     df = conn.read(
+        spreadsheet="test",
         worksheet="Orders",
     )
 

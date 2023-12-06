@@ -208,6 +208,7 @@ def main_page():
                 # Create a connection object.
                 conn = st.connection("gsheets", type=GSheetsConnection)
                 df = conn.read(
+                    spreadsheet="test",
                     worksheet="Orders",
                 )
             try:
