@@ -3,6 +3,20 @@ import streamlit as st
 from functools import partial
 import pandas as pd
 import json
+from streamlit_gsheets import GSheetsConnection
+
+
+
+def create_dataframe(date, presenter_name, observer_name, summary, score_sum):
+    return pd.DataFrame({
+        '날짜': [date],
+        '발표자': [presenter_name],
+        '참관자': [observer_name],
+        '총평': [summary],
+        '총점': [score_sum],
+    })
+
+
 
 def main_page():
 
@@ -12,11 +26,11 @@ def main_page():
     col1, col2, col3 = st.columns([1,1,1])
 
     with col1:
-        my_date = st.date_input('발표일시', key='my_unique_date_input_key') # 디폴트 오늘
+        date = st.date_input('발표일시', key='my_unique_date_input_key') # 디폴트 오늘
     with col2:
-        fname = st.text_input("발표자")
+        presenter_name = st.text_input("발표자")
     with col3:
-        fname1 = st.text_input("참관자")
+        observer_name = st.text_input("참관자")
 
     st.write('\n')
     st.write('채점은 1(저) ~ 5(고)점까지 표시하면 됩니다.')
@@ -189,14 +203,35 @@ def main_page():
     if st.button("제출"):
         if len(summary) != 0:
             with st.container():
-                st.subheader("제출 결과")
-                st.write("총평: ", summary)
-                st.write("총점: ", score_sum)
 
-                # Save data to a JSON file
-                #data = {"summary": summary, "score_sum": score_sum}
-                #with open('data.json', 'w') as f:
-                #    json.dump(data, f)
+                order = create_dataframe(date, presenter_name, observer_name, summary, score_sum)
+                # Create a connection object.
+                conn = st.connection("gsheets", type=GSheetsConnection)
+                df = conn.read(
+                    worksheet="Orders",
+                )
+            try:
+                conn.create(worksheet="Orders", data=order)
+            except Exception as e:
+                if 'A sheet with the name "Orders" already exists.' in str(e):
+                    # read해서 dataframe 받아서 다시 order구성 업데이트 방식으로 구현
+                    order_list = order.values[0]
+
+                    # '날짜'와 '참관자'를 기준으로 중복 행이 있는지 확인
+                    duplicate_rows = df[(df['날짜'] == order_list[0]) & (df['참관자'] == order_list[2])]
+
+                    if duplicate_rows.empty:  # 중복 행이 없는 경우
+                        df.columns = ['날짜', '발표자', '참관자', '총평', '총점']
+                        empty_row_index = df[df['발표자'].isnull()].index[0]
+                        df.loc[empty_row_index] = order_list
+                        conn.update(worksheet="Orders", data=df)
+                        st.success("🎉  제출이 완료되었습니다.  🎉")
+                    else:
+                        st.error("⚠️ 같은 날짜에 같은 참관자가 이미 제출하였습니다. ⚠️")
+                else:
+                    st.error(f"🚨 에러가 발생했습니다: {e} 🚨")
+            else:
+                st.success("🎉  제출이 완료되었습니다.  🎉")
         else:
             st.warning('총평을 입력해주세요!', icon="⚠️")
 
