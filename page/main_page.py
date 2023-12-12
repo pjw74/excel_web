@@ -215,19 +215,30 @@ def main_page():
                         conn = st.connection("gsheets", type=GSheetsConnection)
                         df = conn.read(
                             worksheet="Orders",
+                            ttl=1,
+                        )
+
+                        if pd.isna(df.loc[0][0]):
+                            df.columns = ['날짜', '발표자', '참관자', '총평', '총점']
+                            conn.update(worksheet="Orders", data=df)
+                            #st.write("컬럼명 추가")
+
+                        conn = st.connection("gsheets", type=GSheetsConnection)
+                        df = conn.read(
+                            worksheet="Orders",
+                            ttl=1,
                         )
 
                         # '날짜'와 '참관자'를 기준으로 중복 행이 있는지 확인
                         duplicate_rows = df[(df['날짜'] == order_list[0]) & (df['참관자'] == order_list[2])]
 
                         if duplicate_rows.empty:  # 중복 행이 없는 경우
-                            df.columns = ['날짜', '발표자', '참관자', '총평', '총점']
                             empty_row_index = df[df['발표자'].isnull()].index[0]
                             df.loc[empty_row_index] = order_list
                             conn.update(worksheet="Orders", data=df)
                             st.success("🎉  제출이 완료되었습니다.  🎉")
                         else:
-                            st.error("⚠️ 이미 제출하였습니다. ⚠️")
+                            st.error("⚠️ 이미 제출하셨습니다. ⚠️")
                     else:
                         st.error(f"🚨 에러가 발생했습니다: {e} 🚨")
                 else:

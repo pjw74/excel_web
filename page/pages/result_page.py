@@ -35,29 +35,25 @@ from streamlit_gsheets import GSheetsConnection
 #
 # st.write(spreadsheet.title)
 
-
-
-
-
-
-
 # Create a connection object.
 if st.button("sheet 초기화"):
     conn = st.connection("gsheets", type=GSheetsConnection)
     conn.clear(worksheet="Orders")
-    st.success("Clear")
+    st.success("삭제되었습니다.")
 
 if st.button("sheet 확인"):
     conn = st.connection("gsheets", type=GSheetsConnection)
     df = conn.read(
         worksheet="Orders",
+        ttl=1,
     )
 
     # df.insert({row.날짜}:[15])
     st.dataframe(df)
 
-    st.write("맨 끝")
-    st.write(df.iloc[-1])
+    # st.write("맨 끝")
+    # st.write(df.iloc[-1])
+
     # new_row = {'날짜':'2023-12-07', '발표자':'홍길동', '참관자':'참관자1, 참관자2', '총평':'좋았습니다.', '총점':90}
     # df = df.append(new_row, ignore_index=True)
 
