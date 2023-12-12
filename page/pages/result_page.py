@@ -35,12 +35,6 @@ from streamlit_gsheets import GSheetsConnection
 #
 # st.write(spreadsheet.title)
 
-# Create a connection object.
-if st.button("sheet 초기화"):
-    conn = st.connection("gsheets", type=GSheetsConnection)
-    conn.clear(worksheet="Orders")
-    st.success("삭제되었습니다.")
-
 if st.button("sheet 확인"):
     conn = st.connection("gsheets", type=GSheetsConnection)
     df = conn.read(
@@ -66,6 +60,7 @@ if st.button("sheet 확인"):
     #              f"총점: {row.총점} \n",
     #     )
 
-
-
-
+if st.button("sheet 초기화"):
+    conn = st.connection("gsheets", type=GSheetsConnection)
+    conn.clear(worksheet="Orders")
+    st.success("삭제되었습니다.")
