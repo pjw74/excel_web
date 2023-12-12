@@ -203,35 +203,35 @@ def main_page():
     if st.button("제출"):
         if len(summary) != 0:
             with st.container():
-
                 order = create_dataframe(date, presenter_name, observer_name, summary, score_sum)
-                # Create a connection object.
-                conn = st.connection("gsheets", type=GSheetsConnection)
-                # df = conn.read(
-                #     worksheet="Orders",
-                # )
-            try:
-                conn.create(worksheet="Orders", data=order)
-            except Exception as e:
-                if 'A sheet with the name "Orders" already exists.' in str(e):
-                    # read해서 dataframe 받아서 다시 order구성 업데이트 방식으로 구현
-                    order_list = order.values[0]
+                try:
+                    conn = st.connection("gsheets", type=GSheetsConnection)
+                    conn.create(worksheet="Orders", data=order)
+                except Exception as e:
+                    if 'A sheet with the name "Orders" already exists.' in str(e):
+                        # read해서 dataframe 받아서 다시 order구성 업데이트 방식으로 구현
+                        order_list = order.values[0]
 
-                    # '날짜'와 '참관자'를 기준으로 중복 행이 있는지 확인
-                    # duplicate_rows = df[(df['날짜'] == order_list[0]) & (df['참관자'] == order_list[2])]
-                    #
-                    # if duplicate_rows.empty:  # 중복 행이 없는 경우
-                    #     df.columns = ['날짜', '발표자', '참관자', '총평', '총점']
-                    #     empty_row_index = df[df['발표자'].isnull()].index[0]
-                    #     df.loc[empty_row_index] = order_list
-                    #     conn.update(worksheet="Orders", data=df)
-                    #     st.success("🎉  제출이 완료되었습니다.  🎉")
+                        conn = st.connection("gsheets", type=GSheetsConnection)
+                        df = conn.read(
+                            worksheet="Orders",
+                        )
+
+                        # '날짜'와 '참관자'를 기준으로 중복 행이 있는지 확인
+                        duplicate_rows = df[(df['날짜'] == order_list[0]) & (df['참관자'] == order_list[2])]
+
+                        if duplicate_rows.empty:  # 중복 행이 없는 경우
+                            df.columns = ['날짜', '발표자', '참관자', '총평', '총점']
+                            empty_row_index = df[df['발표자'].isnull()].index[0]
+                            df.loc[empty_row_index] = order_list
+                            conn.update(worksheet="Orders", data=df)
+                            st.success("🎉  제출이 완료되었습니다.  🎉")
+                        else:
+                            st.error("⚠️ 이미 제출하였습니다. ⚠️")
                     else:
-                        st.error("⚠️ 이미 제출하였습니다. ⚠️")
+                        st.error(f"🚨 에러가 발생했습니다: {e} 🚨")
                 else:
-                    st.error(f"🚨 에러가 발생했습니다: {e} 🚨")
-            else:
-                st.success("🎉  제출이 완료되었습니다.  🎉")
+                    st.success("🎉  제출이 완료되었습니다.  🎉")
         else:
             st.warning('총평을 입력해주세요!', icon="⚠️")
 
