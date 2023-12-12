@@ -26,6 +26,20 @@ from urllib.error import URLError
 
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
+# import gspread
+# import json
+#
+# creds = json.loads(st.secrets["gsheets"]["creds"])
+# gc = gspread.service_account_from_dict(creds)
+# spreadsheet = gc.open('test')
+#
+# st.write(spreadsheet.title)
+
+
+
+
+
+
 
 # Create a connection object.
 if st.button("sheet 초기화"):
@@ -36,7 +50,6 @@ if st.button("sheet 초기화"):
 if st.button("sheet 확인"):
     conn = st.connection("gsheets", type=GSheetsConnection)
     df = conn.read(
-        spreadsheet="test",
         worksheet="Orders",
     )
 

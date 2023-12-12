@@ -207,10 +207,9 @@ def main_page():
                 order = create_dataframe(date, presenter_name, observer_name, summary, score_sum)
                 # Create a connection object.
                 conn = st.connection("gsheets", type=GSheetsConnection)
-                df = conn.read(
-                    spreadsheet="test",
-                    worksheet="Orders",
-                )
+                # df = conn.read(
+                #     worksheet="Orders",
+                # )
             try:
                 conn.create(worksheet="Orders", data=order)
             except Exception as e:
@@ -228,7 +227,7 @@ def main_page():
                         conn.update(worksheet="Orders", data=df)
                         st.success("🎉  제출이 완료되었습니다.  🎉")
                     else:
-                        st.error("⚠️ 같은 날짜에 같은 참관자가 이미 제출하였습니다. ⚠️")
+                        st.error("⚠️ 이미 제출하였습니다. ⚠️")
                 else:
                     st.error(f"🚨 에러가 발생했습니다: {e} 🚨")
             else:
